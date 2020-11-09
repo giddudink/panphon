@@ -54,15 +54,15 @@ diacritics:
       - syl: "+"
     content: {}
 
-  - marker: ̈
-    name: "Centralized"
-    position: post
-    conditions:
-      - syl: "+"
-    exclude:
-      - ə
-    content: {}
-
+#  - marker: ̈
+#    name: "Centralised"
+#    position: post
+#    conditions:
+#      - syl: "+"
+#    exclude:
+#      - ə
+#    content: {}
+#
 # Syllabicity
 
   - marker: ̩
@@ -90,14 +90,14 @@ diacritics:
 # Rhoticity
 
   - marker: ˞
-    name: "Rhotacized"
+    name: "Rhotacised"
     position: post
     conditions:
       - syl: "+"
     content:
       ant: "-"
       hi: "+"
-      round: "+"
+      rou: "+"
 
 # Voice quality
 
@@ -122,7 +122,7 @@ diacritics:
       cg: "+"
 
   - marker: ˀ # not IPA
-    name: Glottalized
+    name: Glottalised
     position: post
     conditions:
       - cg: "-"
@@ -130,7 +130,7 @@ diacritics:
       cg: "+"
 
   - marker: ˀ # not IPA
-    name: Preglottalized
+    name: Preglottalised
     position: pre
     conditions:
       - syl: "-"
@@ -138,27 +138,53 @@ diacritics:
     content:
       cg: "+"
 
+# Roundedness
+
+  - marker : ͗
+    name : "More Rounded"
+    position: post
+    conditions:
+      - son : "+"
+        lab : "-"
+        cont : "+"
+        syl : "-"
+      - syl : "+"
+        lab : "-"
+    content:
+      lab: "+"
+
+  - marker : ͑
+    name : "Less Rounded"
+    position: post
+    conditions:
+      - son : "+"
+        lab : "+"
+        cont : "+"
+        syl : "-"
+      - syl: "+"
+        lab: "+"
+    content:
+      lab: "-"
+
 # Secondary articulations
 
   - marker: ̼
     name: Linguolabial
     position: post
     conditions:
-      - cor: "+"
-        ant: "+"
+      - ant: "+"
         cont: "-"
         delrel: "-"
       - cont: "+"
         son: "-"
-        cor: "+"
         ant: "+"
-        strid: "-"
+        stri: "-"
         delrel: "-"
     content:
       lab: "+"
 
   - marker: ʷ
-    name: Labialized
+    name: Labialised
     position: post
     conditions:
       - syl:  "-"
@@ -167,12 +193,32 @@ diacritics:
       - ʍ
       - ɥ
     content:
-      round: "+"
-      back:  "+"
-      hi:  "+"
+      rou: "+"
+      lab: "+"
+
+  - marker: ̪
+    name: Dentalised
+    position: post
+    conditions:
+      - den:  "-"
+        ant:  "+"
+    content:
+      den: "+"
+      dist: "+"
+
+  - marker: ̪ʷ
+    name: Labio-Dentalised
+    position: post
+    conditions:
+      - den:  "-"
+        ant:  "+"
+    content:
+      den: "+"
+      dist: "+"
+      ant: "0"
 
   - marker: ʲ
-    name: Palatalized
+    name: Palatalised
     position: post
     conditions:
       - syl: "-"
@@ -180,27 +226,29 @@ diacritics:
       - j
       - ɥ
     content:
-      hi:   "+"
-      back: "-"
+      hi: "+"
+      low: "-"
+      ba: "-"
+      fro: "+"
 
   - marker: ᶣ
-    name: Labiopalatalized
+    name: Labiopalatalised
     position: post
     conditions:
       - lab: "-"
         syl: "-"
     content:
       hi: "+"
-      back: "-"
-      round: "+"
+      ba: "-"
+      rou: "+"
 
   - marker: ˠ
-    name: Velarized
+    name: Velarised
     position: post
     conditions:
       - syl: "-"
       - hi: "-"
-      - back: "-"
+      - ba: "-"
     exclude:
       - k
       - ɡ
@@ -210,11 +258,13 @@ diacritics:
       - ɰ
       - ʟ
     content:
-      hi:   "+"
-      back: "+"
+      hi: "+"
+      low: "-"
+      ba: "+"
+      fro: "-"
 
   - marker: ˤ
-    name: Pharyngealized
+    name: Pharyngealised
     position: post
     conditions:
       - {}
@@ -222,36 +272,45 @@ diacritics:
       - ʔ
       - ʕ
       - ħ
+      - ʕ̞
+      - ʡ
     content:
-      lo:   "+"
-      back: "+"
+      hi: "-"
+      low: "+"
+      ba: "+"
+      fro: "-"
 
   - marker: ̴
-    name: "Velarized or Pharyngealized"
+    name: "Velarised or Pharyngealised"
     position: post
     conditions:
-      - cor: "+"
-        lat: "+"
+      - ant: "+"
+        delrel: "-"
+      - ant: "-"
+        delrel: "-"
+      - dist: "+"
+        delrel: "-"
+      - dist: "-"
         delrel: "-"
     content:
-      hi:   "+"
-      back: "+"
+      hi: "+"
+      ba: "+"
 
 # Height modifications
 
-  - marker: ̝
-    name: Raised
-    position: post
-    conditions:
-      - cont: "+"
-    content: {}
-
-  - marker: ̞
-    name: Lowered
-    position: post
-    conditions:
-      - cont: "+"
-    content: {}
+#  - marker: ̝
+#    name: Raised
+#    position: post
+#    conditions:
+#      - cont: "+"
+#    content: {}
+#
+#  - marker: ̞
+#    name: Lowered
+#    position: post
+#    conditions:
+#      - cont: "+"
+#    content: {}
 
 # Tongue root state
 
@@ -261,7 +320,7 @@ diacritics:
     conditions:
       - syl: "+"
     content:
-      tense: "+"
+      ten: "+"
 
   - marker: ̙
     name: RTR
@@ -269,7 +328,7 @@ diacritics:
     conditions:
       - syl: "+"
     content:
-      tense: "-"
+      ten: "-"
 
 # Coronal modifications
 
@@ -277,22 +336,45 @@ diacritics:
     name: Apical
     position: post
     conditions:
-      - cor: "+"
+      - dist: "+"
+        lab: "-"
     content:
-      distr: "-"
+      dist: "-"
 
   - marker: ̻
     name: Laminal
     position: post
     conditions:
-      - cor: "+"
+      - dist: "-"
     content:
-      distr: "+"
+      dist: "+"
+
+  - marker: ̺
+    name: "Linguo-Labial Bilabial"
+    position: post
+    conditions:
+      - lab: "+"
+        cons: "+"
+        syl: "-"
+    content:
+      linglab: "+"
+
+  - marker: ̼
+    name: "Linguo-Labial Alveolar"
+    position: post
+    conditions:
+      - ant: "+"
+        cons: "+"
+        syl: "-"
+        dent: "-"
+    content:
+      linglab: "+"
+      lab: "+"
 
 # Nasality
 
   - marker: ̃
-    name: Nasalized
+    name: Nasalised
     position: post
     conditions:
       - voi: "+"
@@ -302,6 +384,54 @@ diacritics:
       - h
     content:
       nas: "+"
+
+  - marker: ⁿ
+    name: Prenasalised
+    position: pre
+    conditions:
+      - cons: "+"
+        nas: "-"
+        lab: "-"
+        ba: "-"
+        ant: "+"
+    content:
+      nas: "+"
+      delrel: "+"
+
+  - marker: ᵐ
+    name: "Prenasalised Labial"
+    position: pre
+    conditions:
+      - cons: "+"
+        nas: "-"
+        lab: "+"
+    content:
+      nas: "+"
+      delrel: "+"
+
+  - marker: ᵑ
+    name: "Prenasalised Dorsal"
+    position: pre
+    conditions:
+      - cons: "+"
+        nas: "-"
+        ba: "+"
+    content:
+      nas: "+"
+      delrel: "+"
+
+  - marker: ᶮ
+    name: "Prenasalised Palatal"
+    position: pre
+    conditions:
+      - cons: "+"
+        nas: "-"
+        ba: "-"
+        fro: "+"
+        hi: "+"
+    content:
+      nas: "+"
+      delrel: "+"
 
 # Properties of release
 
@@ -319,13 +449,27 @@ diacritics:
     name: "Lateral Release"
     position: post
     conditions:
-      - son: "-"
-        cont: "-"
-        cor: "+"
+      - ant: "+"
+        delrel: "-"
+      - ant: "-"
+        delrel: "-"
+      - dist: "+"
+        delrel: "-"
+      - dist: "-"
         delrel: "-"
     content:
       lat: "+"
       delrel: "+"
+
+  - marker: ˡ
+    name: "Lateral Trill"
+    position: post
+    conditions:
+      - son: "+"
+        cons: "+"
+        cont: "+"
+    content:
+      lat: "+"
 
 # Suprasegmentals
 
@@ -333,131 +477,2335 @@ diacritics:
     name: Long
     position: post
     conditions:
-      - long: "-"
+      - lon: "-"
     content:
-      long: "+"
+      lon: "+"
 
   - marker: ̆
-    name: Extra Short
+    name: "Extra Short"
     position: post
     conditions:
       - syl: "+"
     content:
-      long: "-"
+      lon: "-"
+
+# Tone
+
+  - marker: ˥
+    name: "Extra-High Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "-"
+      tonris: "-"
+      tonfal: "-"
+
+  - marker: ˦
+    name: "High Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "+"
+      tonris: "-"
+      tonfal: "-"
+
+  - marker: ˧
+    name: "Mid Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonce: "+"
+      tonris: "-"
+      tonfal: "-"
+
+  - marker: ˨
+    name: "Low Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "+"
+      tonris: "-"
+      tonfal: "-"
+
+  - marker: ˩
+    name: "Extra-Low Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "-"
+      tonris: "-"
+      tonfal: "-"
+
+  - marker: ˩˥
+    name: "Extra-Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "-"
+      tonris: "+"
+      tonfal: "-"
+
+  - marker: ˧˥
+    name: "High Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "-"
+
+  - marker: ˨˦
+    name: "Mid Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonce: "+"
+      tonris: "+"
+      tonfal: "-"
+
+  - marker: ˩˧
+    name: "Low Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "-"
+
+  - marker: ˥˩
+    name: "Extra-Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "-"
+      tonris: "-"
+      tonfal: "+"
+
+  - marker: ˥˧
+    name: "High Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "+"
+      tonris: "-"
+      tonfal: "+"
+
+  - marker: ˦˨
+    name: "Mid Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonce: "+"
+      tonris: "-"
+      tonfal: "+"
+
+  - marker: ˧˩
+    name: "Low Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "+"
+      tonris: "-"
+      tonfal: "+"
+
+  - marker: ˧˥˩
+    name: "Extra-Rising-Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "-"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "+"
+
+  - marker: ˧˥˧
+    name: "High Rising-Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "+"
+
+  - marker: ˧˦˨
+    name: "Mid Rising-Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "+"
+
+  - marker: ˩˧˩
+    name: "Low Rising-Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "+"
+
+  - marker: ˧˩˥
+    name: "Extra-Falling-Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "-"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "-"
+
+  - marker: ˥˧˥
+    name: "High Falling-Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "-"
+
+  - marker: ˧˨˦
+    name: "Mid Falling-Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "-"
+
+  - marker: ˧˩˧
+    name: "Low Falling-Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonce: "+"
+      tonris: "+"
+      tonfal: "+"
+      tonconv: "-"
+
+  - marker: ˈ
+    name: "Primary Stress"
+    position: post
+    conditions:
+      - syl: "+"
+    content:
+      stre: "+"
+      strepri: "+"
+
+  - marker: ˌ
+    name: "Secondary Stress"
+    position: post
+    conditions:
+      - syl: "+"
+    content:
+      stre: "+"
+      strepri: "-"
 
 # COMBINATIONS OF DIACRITICS AND MODIFIERS
 combinations:
 
+#Apicality
+
+  - name: Apical Long
+    combines:
+      - Apical
+      - Long
+
+  - name: Apical Labialised
+    combines:
+      - Apical
+      - Labialised
+
+  - name: Apical Pharyngealised
+    combines:
+      - Apical
+      - Pharyngealised
+
+  - name: Apical Velarised
+    combines:
+      - Apical
+      - Velarised
+
+  - name: Apical Syllabic
+    combines:
+      - Apical
+      - Syllabic
+
+  - name: Syllabic Apical
+    combines:
+      - Syllabic
+      - Apical
+
+  - name: Apical Labialised Long
+    combines:
+      - Apical
+      - Labialised
+      - Long
+
+  - name: Apical Labialised Pharyngealised Long
+    combines:
+      - Apical
+      - Labialised
+      - Pharyngealised
+      - Long
+
+  - name: Apical Pharyngealised Long
+    combines:
+      - Apical
+      - Pharyngealised
+      - Long
+
+  - name: Apical Labialised Velarised Long
+    combines:
+      - Apical
+      - Labialised
+      - Velarised
+      - Long
+
+  - name: Apical Velarised Long
+    combines:
+      - Apical
+      - Velarised
+      - Long
+
+  - name: Apical Syllabic Long
+    combines:
+      - Apical
+      - Syllabic
+      - Long
+
+  - name: Syllabic Apical Long
+    combines:
+      - Syllabic
+      - Apical
+      - Long
+
+
+  - name: Apical Dentalised Long
+    combines:
+      - Apical
+      - Dentalised
+      - Long
+
+  - name: Apical Labio-Dentalised
+    combines:
+      - Apical
+      - Dentalised
+      - Labialised
+
+  - name: Apical Dentalised Pharyngealised
+    combines:
+      - Apical
+      - Dentalised
+      - Pharyngealised
+
+  - name: Apical Labio-Dentalised Pharyngealised
+    combines:
+      - Apical
+      - Labio-Dentalised
+      - Pharyngealised
+
+  - name: Apical Dentalised Velarised
+    combines:
+      - Apical
+      - Dentalised
+      - Velarised
+
+  - name: Apical Labio-Dentalised Velarised
+    combines:
+      - Apical
+      - Labio-Dentalised
+      - Velarised
+
+  - name: Apical Dentalised Syllabic
+    combines:
+      - Apical
+      - Dentalised
+      - Syllabic
+
+  - name: Syllabic Apical Dentalised
+    combines:
+      - Syllabic
+      - Apical
+      - Dentalised
+
+  - name: Apical Labio-Dentalised Long
+    combines:
+      - Apical
+      - Labio-Dentalised
+      - Long
+
+  - name: Apical Dentalised Pharyngealised Long
+    combines:
+      - Apical
+      - Dentalised
+      - Pharyngealised
+      - Long
+
+  - name: Apical Labio-Dentalised Pharyngealised Long
+    combines:
+      - Apical
+      - Labio-Dentalised
+      - Pharyngealised
+      - Long
+
+  - name: Apical Dentalised Syllabic Long
+    combines:
+      - Apical
+      - Dentalised
+      - Syllabic
+      - Long
+
+  - name: Syllabic Apical Dentalised Long
+    combines:
+      - Syllabic
+      - Apical
+      - Dentalised
+      - Long
+
+#Dentalised
+
+  - name: Dentalised Long
+    combines:
+      - Dentalised
+      - Long
+
+  - name: Dentalised Pharyngealised
+    combines:
+      - Dentalised
+      - Pharyngealised
+
+  - name: Labio-Dentalised Pharyngealised
+    combines:
+      - Labio-Dentalised
+      - Pharyngealised
+
+  - name: Dentalised Velarised
+    combines:
+      - Dentalised
+      - Velarised
+
+  - name: Labio-Dentalised Velarised
+    combines:
+      - Labio-Dentalised
+      - Velarised
+
+  - name: Dentalised Syllabic
+    combines:
+      - Dentalised
+      - Syllabic
+
+  - name: Syllabic Dentalised
+    combines:
+      - Syllabic
+      - Dentalised
+
+  - name: Labio-Dentalised Long
+    combines:
+      - Labio-Dentalised
+      - Long
+
+  - name: Dentalised Pharyngealised Long
+    combines:
+      - Dentalised
+      - Pharyngealised
+      - Long
+
+  - name: Labio-Dentalised Pharyngealised Long
+    combines:
+      - Labio-Dentalised
+      - Pharyngealised
+      - Long
+
+  - name: Dentalised Syllabic Long
+    combines:
+      - Dentalised
+      - Syllabic
+      - Long
+
+  - name: Syllabic Dentalised Long
+    combines:
+      - Syllabic
+      - Dentalised
+      - Long
+
+#Laminal
+
+  - name: Laminal Long
+    combines:
+      - Laminal
+      - Long
+
+  - name: Laminal Labialised
+    combines:
+      - Laminal
+      - Labialised
+
+  - name: Laminal Pharyngealised
+    combines:
+      - Laminal
+      - Pharyngealised
+
+  - name: Laminal Syllabic
+    combines:
+      - Laminal
+      - Syllabic
+
+  - name: Syllabic Laminal
+    combines:
+      - Syllabic
+      - Laminal
+
+  - name: Laminal Labialised Long
+    combines:
+      - Laminal
+      - Labialised
+      - Long
+
+  - name: Laminal Pharyngealised Long
+    combines:
+      - Laminal
+      - Pharyngealised
+      - Long
+
+  - name: Laminal Syllabic Long
+    combines:
+      - Laminal
+      - Syllabic
+      - Long
+
+  - name: Syllabic Laminal Long
+    combines:
+      - Syllabic
+      - Laminal
+      - Long
+
+# Roundedness
+
+  - name: More Rounded Non-syllabic
+    combines:
+      - "More Rounded"
+      - Non-syllabic
+
+  - name: Less Rounded Non-syllabic
+    combines:
+      - "Less Rounded"
+      - Non-syllabic
+
+  - name: More Rounded Creaky Voiced
+    combines:
+      - "More Rounded"
+      - "Creaky Voiced"
+
+  - name: Less Rounded Creaky Voiced
+    combines:
+      - "Less Rounded"
+      - "Creaky Voiced"
+
+  - name: More Rounded Breathy Voiced
+    combines:
+      - "More Rounded"
+      - "Breathy Voiced" 
+
+  - name: Less Rounded Breathy Voiced
+    combines:
+      - "Less Rounded"
+      - "Breathy Voiced" 
+
+# Tone
+
+  - name: Long Extra-High Tone
+    combines:
+      - Long
+      - "Extra-High Tone"
+
+  - name: Long High Tone
+    combines:
+      - Long
+      - "High Tone"
+
+  - name: Long Mid Tone
+    combines:
+      - Long
+      - "Mid Tone"
+
+  - name: Long Low Tone
+    combines:
+      - Long
+      - "Low Tone"
+
+  - name: Long Extra-Low Tone
+    combines:
+      - Long
+      - "Extra-Low Tone"
+
+  - name: Long Extra-Rising Tone
+    combines:
+      - Long
+      - "Extra-Rising Tone"
+
+  - name: Long High Rising Tone
+    combines:
+      - Long
+      - "High Rising Tone"
+
+  - name: Long Mid Rising Tone
+    combines:
+      - Long
+      - "Mid Rising Tone"
+
+  - name: Long Low Rising Tone
+    combines:
+      - Long
+      - "Low Rising Tone"
+
+  - name: Long Extra-Falling Tone
+    combines:
+      - Long
+      - "Extra-Falling Tone"
+
+  - name: Long High Falling Tone
+    combines:
+      - Long
+      - "High Falling Tone"
+
+  - name: Long Mid Falling Tone
+    combines:
+      - Long
+      - "Mid Falling Tone"
+
+  - name: Long Low Falling Tone
+    combines:
+      - Long
+      - "Low Falling Tone"
+
+  - name: Long Extra-Rising-Falling Tone
+    combines:
+      - Long
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long High Rising-Falling Tone
+    combines:
+      - Long
+      - "High Rising-Falling Tone"
+
+  - name: Long Mid Rising-Falling Tone
+    combines:
+      - Long
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Low Rising-Falling Tone
+    combines:
+      - Long
+      - "Low Rising-Falling Tone"
+
+  - name: Long Extra-Falling-Rising Tone
+    combines:
+      - Long
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long High Falling-Rising Tone
+    combines:
+      - Long
+      - "High Falling-Rising Tone"
+
+  - name: Long Mid Falling-Rising Tone
+    combines:
+      - Long
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Low Falling-Rising Tone
+    combines:
+      - Long
+      - "Low Falling-Rising Tone"
+
+  - name: Long Primary Stress
+    combines:
+      - Long
+      - "Primary Stress"
+
+  - name: Long Secondary Stress
+    combines:
+      - Long
+      - "Secondary Stress"
+
+  - name: Nasalised Extra-High Tone
+    combines:
+      - Nasalised
+      - "Extra-High Tone"
+
+  - name: Nasalised High Tone
+    combines:
+      - Nasalised
+      - "High Tone"
+
+  - name: Nasalised Mid Tone
+    combines:
+      - Nasalised
+      - "Mid Tone"
+
+  - name: Nasalised Low Tone
+    combines:
+      - Nasalised
+      - "Low Tone"
+
+  - name: Nasalised Extra-Low Tone
+    combines:
+      - Nasalised
+      - "Extra-Low Tone"
+
+  - name: Nasalised Extra-Rising Tone
+    combines:
+      - Nasalised
+      - "Extra-Rising Tone"
+
+  - name: Nasalised High Rising Tone
+    combines:
+      - Nasalised
+      - "High Rising Tone"
+
+  - name: Nasalised Mid Rising Tone
+    combines:
+      - Nasalised
+      - "Mid Rising Tone"
+
+  - name: Nasalised Low Rising Tone
+    combines:
+      - Nasalised
+      - "Low Rising Tone"
+
+  - name: Nasalised Extra-Falling Tone
+    combines:
+      - Nasalised
+      - "Extra-Falling Tone"
+
+  - name: Nasalised High Falling Tone
+    combines:
+      - Nasalised
+      - "High Falling Tone"
+
+  - name: Nasalised Mid Falling Tone
+    combines:
+      - Nasalised
+      - "Mid Falling Tone"
+
+  - name: Nasalised Low Falling Tone
+    combines:
+      - Nasalised
+      - "Low Falling Tone"
+
+  - name: Nasalised Extra-Rising-Falling Tone
+    combines:
+      - Nasalised
+      - "Extra-Rising-Falling Tone"
+
+  - name: Nasalised High Rising-Falling Tone
+    combines:
+      - Nasalised
+      - "High Rising-Falling Tone"
+
+  - name: Nasalised Mid Rising-Falling Tone
+    combines:
+      - Nasalised
+      - "Mid Rising-Falling Tone"
+
+  - name: Nasalised Low Rising-Falling Tone
+    combines:
+      - Nasalised
+      - "Low Rising-Falling Tone"
+
+  - name: Nasalised Extra-Falling-Rising Tone
+    combines:
+      - Nasalised
+      - "Extra-Falling-Rising Tone"
+
+  - name: Nasalised High Falling-Rising Tone
+    combines:
+      - Nasalised
+      - "High Falling-Rising Tone"
+
+  - name: Nasalised Mid Falling-Rising Tone
+    combines:
+      - Nasalised
+      - "Mid Falling-Rising Tone"
+
+  - name: Nasalised Low Falling-Rising Tone
+    combines:
+      - Nasalised
+      - "Low Falling-Rising Tone"
+
+  - name: Nasalised Primary Stress
+    combines:
+      - Nasalised
+      - "Primary Stress"
+
+  - name: Nasalised Secondary Stress
+    combines:
+      - Nasalised
+      - "Secondary Stress"
+
+  - name: Creaky Voiced Extra-High Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-High Tone"
+
+  - name: Creaky Voiced High Tone
+    combines:
+      - "Creaky Voiced"
+      - "High Tone"
+
+  - name: Creaky Voiced Mid Tone
+    combines:
+      - "Creaky Voiced"
+      - "Mid Tone"
+
+  - name: Creaky Voiced Low Tone
+    combines:
+      - "Creaky Voiced"
+      - "Low Tone"
+
+  - name: Creaky Voiced Extra-Low Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-Low Tone"
+
+  - name: Creaky Voiced Extra-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-Rising Tone"
+
+  - name: Creaky Voiced High Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "High Rising Tone"
+
+  - name: Creaky Voiced Mid Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Mid Rising Tone"
+
+  - name: Creaky Voiced Low Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Low Rising Tone"
+
+  - name: Creaky Voiced Extra-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-Falling Tone"
+
+  - name: Creaky Voiced High Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "High Falling Tone"
+
+  - name: Creaky Voiced Mid Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Mid Falling Tone"
+
+  - name: Creaky Voiced Low Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Low Falling Tone"
+
+  - name: Creaky Voiced Extra-Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-Rising-Falling Tone"
+
+  - name: Creaky Voiced High Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "High Rising-Falling Tone"
+
+  - name: Creaky Voiced Mid Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Mid Rising-Falling Tone"
+
+  - name: Creaky Voiced Low Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Low Rising-Falling Tone"
+
+  - name: Creaky Voiced Extra-Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Extra-Falling-Rising Tone"
+
+  - name: Creaky Voiced High Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "High Falling-Rising Tone"
+
+  - name: Creaky Voiced Mid Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Mid Falling-Rising Tone"
+
+  - name: Creaky Voiced Low Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Low Falling-Rising Tone"
+
+  - name: Creaky Voiced Primary Stress
+    combines:
+      - "Creaky Voiced"
+      - "Primary Stress"
+
+  - name: Creaky Voiced Secondary Stress
+    combines:
+      - "Creaky Voiced"
+      - "Secondary Stress"
+
+  - name: Breathy Voiced Extra-High Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-High Tone"
+
+  - name: Breathy Voiced High Tone
+    combines:
+      - "Breathy Voiced" 
+      - "High Tone"
+
+  - name: Breathy Voiced Mid Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Mid Tone"
+
+  - name: Breathy Voiced Low Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Low Tone"
+
+  - name: Breathy Voiced Extra-Low Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-Low Tone"
+
+  - name: Breathy Voiced Extra-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-Rising Tone"
+
+  - name: Breathy Voiced High Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "High Rising Tone"
+
+  - name: Breathy Voiced Mid Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Mid Rising Tone"
+
+  - name: Breathy Voiced Low Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Low Rising Tone"
+
+  - name: Breathy Voiced Extra-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-Falling Tone"
+
+  - name: Breathy Voiced High Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "High Falling Tone"
+
+  - name: Breathy Voiced Mid Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Mid Falling Tone"
+
+  - name: Breathy Voiced Low Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Low Falling Tone"
+
+  - name: Breathy Voiced Extra-Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-Rising-Falling Tone"
+
+  - name: Breathy Voiced High Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "High Rising-Falling Tone"
+
+  - name: Breathy Voiced Mid Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Mid Rising-Falling Tone"
+
+  - name: Breathy Voiced Low Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Low Rising-Falling Tone"
+
+  - name: Breathy Voiced Extra-Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Extra-Falling-Rising Tone"
+
+  - name: Breathy Voiced High Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "High Falling-Rising Tone"
+
+  - name: Breathy Voiced Mid Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Mid Falling-Rising Tone"
+
+  - name: Breathy Voiced Low Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Low Falling-Rising Tone"
+
+  - name: Breathy Voiced Primary Stress
+    combines:
+      - "Breathy Voiced"
+      - "Primary Stress"
+
+  - name: Breathy Voiced Secondary Stress
+    combines:
+      - "Breathy Voiced"
+      - "Secondary Stress"
+
+  - name: Syllabic Extra-High Tone
+    combines:
+      - Syllabic
+      - "Extra-High Tone"
+
+  - name: Syllabic High Tone
+    combines:
+      - Syllabic
+      - "High Tone"
+
+  - name: Syllabic Mid Tone
+    combines:
+      - Syllabic
+      - "Mid Tone"
+
+  - name: Syllabic Low Tone
+    combines:
+      - Syllabic
+      - "Low Tone"
+
+  - name: Syllabic Extra-Low Tone
+    combines:
+      - Syllabic
+      - "Extra-Low Tone"
+
+  - name: Syllabic Extra-Rising Tone
+    combines:
+      - Syllabic
+      - "Extra-Rising Tone"
+
+  - name: Syllabic High Rising Tone
+    combines:
+      - Syllabic
+      - "High Rising Tone"
+
+  - name: Syllabic Mid Rising Tone
+    combines:
+      - Syllabic
+      - "Mid Rising Tone"
+
+  - name: Syllabic Low Rising Tone
+    combines:
+      - Syllabic
+      - "Low Rising Tone"
+
+  - name: Syllabic Extra-Falling Tone
+    combines:
+      - Syllabic
+      - "Extra-Falling Tone"
+
+  - name: Syllabic High Falling Tone
+    combines:
+      - Syllabic
+      - "High Falling Tone"
+
+  - name: Syllabic Mid Falling Tone
+    combines:
+      - Syllabic
+      - "Mid Falling Tone"
+
+  - name: Syllabic Low Falling Tone
+    combines:
+      - Syllabic
+      - "Low Falling Tone"
+
+  - name: Syllabic Extra-Rising-Falling Tone
+    combines:
+      - Syllabic
+      - "Extra-Rising-Falling Tone"
+
+  - name: Syllabic High Rising-Falling Tone
+    combines:
+      - Syllabic
+      - "High Rising-Falling Tone"
+
+  - name: Syllabic Mid Rising-Falling Tone
+    combines:
+      - Syllabic
+      - "Mid Rising-Falling Tone"
+
+  - name: Syllabic Low Rising-Falling Tone
+    combines:
+      - Syllabic
+      - "Low Rising-Falling Tone"
+
+  - name: Syllabic Extra-Falling-Rising Tone
+    combines:
+      - Syllabic
+      - "Extra-Falling-Rising Tone"
+
+  - name: Syllabic High Falling-Rising Tone
+    combines:
+      - Syllabic
+      - "High Falling-Rising Tone"
+
+  - name: Syllabic Mid Falling-Rising Tone
+    combines:
+      - Syllabic
+      - "Mid Falling-Rising Tone"
+
+  - name: Syllabic Low Falling-Rising Tone
+    combines:
+      - Syllabic
+      - "Low Falling-Rising Tone"
+
+  - name: Syllabic Primary Stress
+    combines:
+      - Syllabic
+      - "Primary Stress"
+
+  - name: Syllabic Secondary Stress
+    combines:
+      - Syllabic
+      - "Secondary Stress"
+
+  - name: Long Syllabic Extra-High Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-High Tone"
+
+  - name: Long Syllabic High Tone
+    combines:
+      - Long
+      - Syllabic
+      - "High Tone"
+
+  - name: Long Syllabic Mid Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Mid Tone"
+
+  - name: Long Syllabic Low Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Low Tone"
+
+  - name: Long Syllabic Extra-Low Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-Low Tone"
+
+  - name: Long Syllabic Extra-Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-Rising Tone"
+
+  - name: Long Syllabic High Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "High Rising Tone"
+
+  - name: Long Syllabic Mid Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Mid Rising Tone"
+
+  - name: Long Syllabic Low Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Low Rising Tone"
+
+  - name: Long Syllabic Extra-Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-Falling Tone"
+
+  - name: Long Syllabic High Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "High Falling Tone"
+
+  - name: Long Syllabic Mid Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Mid Falling Tone"
+
+  - name: Long Syllabic Low Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Low Falling Tone"
+
+  - name: Long Syllabic Extra-Rising-Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long Syllabic High Rising-Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "High Rising-Falling Tone"
+
+  - name: Long Syllabic Mid Rising-Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Syllabic Low Rising-Falling Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Low Rising-Falling Tone"
+
+  - name: Long Syllabic Extra-Falling-Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long Syllabic High Falling-Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "High Falling-Rising Tone"
+
+  - name: Long Syllabic Mid Falling-Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Syllabic Low Falling-Rising Tone
+    combines:
+      - Long
+      - Syllabic
+      - "Low Falling-Rising Tone"
+
+  - name: Long Syllabic Primary Stress
+    combines:
+      - Long
+      - Syllabic
+      - "Primary Stress"
+
+  - name: Long Syllabic Secondary Stress
+    combines:
+      - Long
+      - Syllabic
+      - "Secondary Stress"
+
+  - name: Long Nasalised Extra-High Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-High Tone"
+
+  - name: Long Nasalised High Tone
+    combines:
+      - Nasalised
+      - Long
+      - "High Tone"
+
+  - name: Long Nasalised Mid Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Mid Tone"
+
+  - name: Long Nasalised Low Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Low Tone"
+
+  - name: Long Nasalised Extra-Low Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-Low Tone"
+
+  - name: Long Nasalised Extra-Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-Rising Tone"
+
+  - name: Long Nasalised High Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "High Rising Tone"
+
+  - name: Long Nasalised Mid Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Mid Rising Tone"
+
+  - name: Long Nasalised Low Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Low Rising Tone"
+
+  - name: Long Nasalised Extra-Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-Falling Tone"
+
+  - name: Long Nasalised High Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "High Falling Tone"
+
+  - name: Long Nasalised Mid Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Mid Falling Tone"
+
+  - name: Long Nasalised Low Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Low Falling Tone"
+
+  - name: Long Nasalised Extra-Rising-Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long Nasalised High Rising-Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "High Rising-Falling Tone"
+
+  - name: Long Nasalised Mid Rising-Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Nasalised Low Rising-Falling Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Low Rising-Falling Tone"
+
+  - name: Long Nasalised Extra-Falling-Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long Nasalised High Falling-Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "High Falling-Rising Tone"
+
+  - name: Long Nasalised Mid Falling-Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Nasalised Low Falling-Rising Tone
+    combines:
+      - Nasalised
+      - Long
+      - "Low Falling-Rising Tone"
+
+  - name: Long Nasalised Primary Stress
+    combines:
+      - Nasalised
+      - Long
+      - "Primary Stress"
+
+  - name: Long Nasalised Secondary Stress
+    combines:
+      - Nasalised
+      - Long
+      - "Secondary Stress"
+
+  - name: Long Creaky Voiced Extra-High Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-High Tone"
+
+  - name: Long Creaky Voiced High Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "High Tone"
+
+  - name: Long Creaky Voiced Mid Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Mid Tone"
+
+  - name: Long Creaky Voiced Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Low Tone"
+
+  - name: Long Creaky Voiced Extra-Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-Low Tone"
+
+  - name: Long Creaky Voiced Extra-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-Rising Tone"
+
+  - name: Long Creaky Voiced High Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "High Rising Tone"
+
+  - name: Long Creaky Voiced Mid Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Mid Rising Tone"
+
+  - name: Long Creaky Voiced Low Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Low Rising Tone"
+
+  - name: Long Creaky Voiced Extra-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-Falling Tone"
+
+  - name: Long Creaky Voiced High Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "High Falling Tone"
+
+  - name: Long Creaky Voiced Mid Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Mid Falling Tone"
+
+  - name: Long Creaky Voiced Low Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Low Falling Tone"
+
+  - name: Long Creaky Voiced Extra-Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long Creaky Voiced High Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "High Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Mid Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Low Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Low Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Extra-Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long Creaky Voiced High Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "High Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Mid Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Low Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Low Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Primary Stress
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Primary Stress"
+
+  - name: Long Creaky Voiced Secondary Stress
+    combines:
+      - "Creaky Voiced"
+      - Long
+      - "Secondary Stress"
+
+  - name: Long Breathy Voiced Extra-High Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-High Tone"
+
+  - name: Long Breathy Voiced High Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "High Tone"
+
+  - name: Long Breathy Voiced Mid Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Mid Tone"
+
+  - name: Long Breathy Voiced Low Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Low Tone"
+
+  - name: Long Breathy Voiced Extra-Low Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-Low Tone"
+
+  - name: Long Breathy Voiced Extra-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-Rising Tone"
+
+  - name: Long Breathy Voiced High Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "High Rising Tone"
+
+  - name: Long Breathy Voiced Mid Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Mid Rising Tone"
+
+  - name: Long Breathy Voiced Low Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Low Rising Tone"
+
+  - name: Long Breathy Voiced Extra-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-Falling Tone"
+
+  - name: Long Breathy Voiced High Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "High Falling Tone"
+
+  - name: Long Breathy Voiced Mid Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Mid Falling Tone"
+
+  - name: Long Breathy Voiced Low Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Low Falling Tone"
+
+  - name: Long Breathy Voiced Extra-Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long Breathy Voiced High Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "High Rising-Falling Tone"
+
+  - name: Long Breathy Voiced Mid Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Breathy Voiced Low Rising-Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Low Rising-Falling Tone"
+
+  - name: Long Breathy Voiced Extra-Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long Breathy Voiced High Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "High Falling-Rising Tone"
+
+  - name: Long Breathy Voiced Mid Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Breathy Voiced Low Falling-Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - Long
+      - "Low Falling-Rising Tone"
+
+  - name: Long Breathy Voiced Primary Stress
+    combines:
+      - "Breathy Voiced"
+      - Long
+      - "Primary Stress"
+
+  - name: Long Breathy Voiced Secondary Stress
+    combines:
+      - "Breathy Voiced"
+      - Long
+      - "Secondary Stress"
+
+  - name: Long Creaky Voiced Nasalised Extra-High Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-High Tone"
+
+  - name: Long Creaky Voiced Nasalised High Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "High Tone"
+
+  - name: Long Creaky Voiced Nasalised Mid Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Mid Tone"
+
+  - name: Long Creaky Voiced Nasalised Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Low Tone"
+
+  - name: Long Creaky Voiced Nasalised Extra-Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-Low Tone"
+
+  - name: Long Creaky Voiced Nasalised Extra-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised High Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "High Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Mid Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Mid Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Low Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Low Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Extra-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised High Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "High Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Mid Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Mid Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Low Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Low Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Extra-Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised High Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "High Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Mid Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Mid Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Low Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Low Rising-Falling Tone"
+
+  - name: Long Creaky Voiced Nasalised Extra-Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Extra-Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised High Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "High Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Mid Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Mid Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Low Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Low Falling-Rising Tone"
+
+  - name: Long Creaky Voiced Nasalised Primary Stress
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Primary Stress"
+
+  - name: Long Creaky Voiced Nasalised Secondary Stress
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+      - "Secondary Stress"
+
+  - name: Creaky Voiced Nasalised Extra-High Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-High Tone"
+
+  - name: Creaky Voiced Nasalised High Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "High Tone"
+
+  - name: Creaky Voiced Nasalised Mid Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Mid Tone"
+
+  - name: Creaky Voiced Nasalised Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Low Tone"
+
+  - name: Creaky Voiced Nasalised Extra-Low Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-Low Tone"
+
+  - name: Creaky Voiced Nasalised Extra-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-Rising Tone"
+
+  - name: Creaky Voiced Nasalised High Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "High Rising Tone"
+
+  - name: Creaky Voiced Nasalised Mid Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Mid Rising Tone"
+
+  - name: Creaky Voiced Nasalised Low Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Low Rising Tone"
+
+  - name: Creaky Voiced Nasalised Extra-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-Falling Tone"
+
+  - name: Creaky Voiced Nasalised High Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "High Falling Tone"
+
+  - name: Creaky Voiced Nasalised Mid Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Mid Falling Tone"
+
+  - name: Creaky Voiced Nasalised Low Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Low Falling Tone"
+
+  - name: Creaky Voiced Nasalised Extra-Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-Rising-Falling Tone"
+
+  - name: Creaky Voiced Nasalised High Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "High Rising-Falling Tone"
+
+  - name: Creaky Voiced Nasalised Mid Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Mid Rising-Falling Tone"
+
+  - name: Creaky Voiced Nasalised Low Rising-Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Low Rising-Falling Tone"
+
+  - name: Creaky Voiced Nasalised Extra-Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Extra-Falling-Rising Tone"
+
+  - name: Creaky Voiced Nasalised High Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "High Falling-Rising Tone"
+
+  - name: Creaky Voiced Nasalised Mid Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Mid Falling-Rising Tone"
+
+  - name: Creaky Voiced Nasalised Low Falling-Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Low Falling-Rising Tone"
+
+  - name: Creaky Voiced Nasalised Primary Stress
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Primary Stress"
+
+  - name: Creaky Voiced Nasalised Secondary Stress
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - "Secondary Stress"
+
 # Quantity
 
-  - name: Long Labialized
+  - name: Long Labialised
     combines:
-    - Long
-    - Labialized
+      - Long
+      - Labialised
 
-  - name: Long Palatalized
+  - name: Long Palatalised
     combines:
-    - Long
-    - Palatalized
+      - Long
+      - Palatalised
 
-  - name: Long Velarized
+  - name: Long Velarised
     combines:
-    - Long
-    - Velarized
+      - Long
+      - Velarised
 
-  - name: Long Pharyngealized
+  - name: Velarised Long
     combines:
-    - Long
-    - Pharyngealized
+      - Velarised
+      - Long
+
+  - name: Long Pharyngealised
+    combines:
+      - Long
+      - Pharyngealised
+
+  - name: Long Aspirated
+    combines:
+      - Long
+      - Aspirated
+
+  - name: Long Aspirated Labialised
+    combines:
+      - Long
+      - Aspirated
+      - Labialised
+
+  - name: Long Labialised Aspirated
+    combines:
+      - Long
+      - Labialised
+      - Aspirated
 
 # Airstream mechanisms
 
 ## Ejective
 
-  - name: Ejective Labialized
+  - name: Ejective Labialised
     combines:
-    - Ejective
-    - Labialized
+      - Ejective
+      - Labialised
 
-  - name: Ejective Palatalized
+  - name: Ejective Palatalised
     combines:
-    - Ejective
-    - Palatalized
+      - Ejective
+      - Palatalised
 
   - name: Ejective Long
     combines:
-    - Ejective
-    - Long
+      - Ejective
+      - Long
+
+  - name: Ejective Pharyngealised
+    combines:
+      - Ejective
+      - Pharyngealised
+
+  - name: Ejective Labialised Pharyngealised
+    combines:
+      - Ejective
+      - Labialised
+      - Pharyngealised
+
+  - name: Ejective Pharyngealised Long
+    combines:
+      - Ejective
+      - Pharyngealised
+      - Long
+
+  - name: Ejective Labialised Pharyngealised Long
+    combines:
+      - Ejective
+      - Labialised
+      - Pharyngealised
+      - Long
 
 # Laryngeal features
 
 ## Voiceless
 
-  - name: Voiceless Labialized
+  - name: Voiceless Labialised
     combines:
-    - Voiceless
-    - Labialized
+      - Voiceless
+      - Labialised
 
-  - name: Voiceless Palatalized
+  - name: Voiceless Palatalised
     combines:
-    - Voiceless
-    - Palatalized
+      - Voiceless
+      - Palatalised
 
-  - name: Voiceless Velarized
+  - name: Voiceless Velarised
     combines:
-    - Voiceless
-    - Velarized
+      - Voiceless
+      - Velarised
 
-  - name: Voiceless Pharyngealized
+  - name: Voiceless Pharyngealised
     combines:
-    - Voiceless
-    - Pharyngealized
+      - Voiceless
+      - Pharyngealised
 
   - name: Voiceless Long
     combines:
-    - Voiceless
-    - Long
+      - Voiceless
+      - Long
+
+  - name: Voiceless Labialised Long
+    combines:
+      - Voiceless
+      - Labialised
+      - Long
+
+  - name: Voiceless Palatalised Long
+    combines:
+      - Voiceless
+      - Palatalised
+      - Long
+
+  - name: Voiceless Velarised Long
+    combines:
+      - Voiceless
+      - Velarised
+      - Long
+
+  - name: Voiceless Pharyngealised Long
+    combines:
+      - Voiceless
+      - Pharyngealised
+      - Long
 
 ## Aspirated
 
-  - name: Aspirated Labialized
+  - name: Aspirated Labialised
     combines:
-    - Aspirated
-    - Labialized
+      - Aspirated
+      - Labialised
 
-  - name: Aspirated Palatalized
+  - name: Aspirated Palatalised
     combines:
-    - Aspirated
-    - Palatalized
+      - Aspirated
+      - Palatalised
 
-  - name: Aspirated Velarized
+  - name: Aspirated Velarised
     combines:
-    - Aspirated
-    - Velarized
+      - Aspirated
+      - Velarised
 
-  - name: Aspirated Labiopalatalized
+  - name: Velarised Aspirated
     combines:
-    - Aspirated
-    - Labiopalatalized
+      - Velarised
+      - Aspirated
 
-  - name: Aspirated Pharyngealized
+  - name: Aspirated Labiopalatalised
     combines:
-    - Aspirated
-    - Pharyngealized
+      - Aspirated
+      - Labiopalatalised
+
+  - name: Labiopalatalised Aspirated
+    combines:
+      - Labiopalatalised
+      - Aspirated
+
+  - name: Aspirated Labiopalatalised Long
+    combines:
+      - Aspirated
+      - Labiopalatalised
+      - Long
+
+  - name: Labiopalatalised Aspirated Long
+    combines:
+      - Labiopalatalised
+      - Aspirated
+      - Long
+
+  - name: Labiopalatalised Long
+    combines:
+      - Labiopalatalised
+      - Long
+
+  - name: Aspirated Pharyngealised
+    combines:
+      - Aspirated
+      - Pharyngealised
+
+  - name: Aspirated Pharyngealised Long
+    combines:
+      - Aspirated
+      - Pharyngealised
+      - Long
 
   - name: Aspirated Long
     combines:
-    - Aspirated
-    - Long
+      - Aspirated
+      - Long
+
+  - name: Aspirated Palatalised Labialised
+    combines:
+      - Aspirated
+      - Palatalised
+      - Labialised
+
+  - name: Aspirated Labialised Palatalised
+    combines:
+      - Aspirated
+      - Labialised
+      - Palatalised
+
+  - name: Aspirated Pharyngealised Labialised
+    combines:
+      - Aspirated
+      - Pharyngealised
+      - Labialised
+
+  - name: Aspirated Labialised Pharyngealised
+    combines:
+      - Aspirated
+      - Labialised
+      - Pharyngealised
+
+  - name: Aspirated Palatalised Labialised Long
+    combines:
+      - Aspirated
+      - Palatalised
+      - Labialised
+      - Long
+
+  - name: Aspirated Labialised Palatalised Long
+    combines:
+      - Aspirated
+      - Labialised
+      - Palatalised
+      - Long
+
+  - name: Aspirated Pharyngealised Labialised Long
+    combines:
+      - Aspirated
+      - Pharyngealised
+      - Labialised
+      - Long
+
+  - name: Aspirated Labialised Pharyngealised Long
+    combines:
+      - Aspirated
+      - Labialised
+      - Pharyngealised
+      - Long
 
 # Syllabicity
 
-  - name: Syllabic Labialized
+  - name: Syllabic Labialised
     combines:
-    - Syllabic
-    - Labialized
+      - Syllabic
+      - Labialised
+
+  - name: Syllabic Long
+    combines:
+      - Syllabic
+      - Long
+
+  - name: Syllabic Labialised Long
+    combines:
+      - Syllabic
+      - Labialised
+      - Long
+
+# Non-syllabicity
+
+  - name: Creaky Voiced Non-syllabic
+    combines:
+      - "Creaky Voiced"
+      - Non-syllabic
+
+  - name: Breathy Voiced Non-syllabic
+    combines:
+      - "Breathy Voiced" 
+      - Non-syllabic
+
+  - name: Non-syllabic Creaky Voiced
+    combines:
+      - Non-syllabic
+      - "Creaky Voiced"
+
+  - name: Non-syllabic Breathy Voiced
+    combines:
+      - Non-syllabic
+      - "Breathy Voiced" 
 
 # Rhoticity
+
+  - name: Rhotacised Long
+    combines:
+      - Rhotacised
+      - Long
 
 # Voice quality
 
@@ -465,205 +2813,456 @@ combinations:
 
   - name: Breathy Devoiced
     combines:
-    - "Breathy Voiced"
-    - Voiceless
+      - "Breathy Voiced"
+      - Voiceless
 
-  - name: Breathy Labialized
+  - name: Breathy Devoiced Long
     combines:
-    - "Breathy Voiced"
-    - Labialized
+      - "Breathy Voiced"
+      - Voiceless
+      - Long
 
-  - name: Breathy Palatalized
+  - name: Breathy Labialised
     combines:
-    - "Breathy Voiced"
-    - Palatalized
+      - "Breathy Voiced"
+      - Labialised
 
-  - name: Breathy Velarized
+  - name: Breathy Labialised Long
     combines:
-    - "Breathy Voiced"
-    - Velarized
+      - "Breathy Voiced"
+      - Labialised
+      - Long
 
-  - name: Breathy Pharyngealized
+  - name: Breathy Palatalised
     combines:
-    - "Breathy Voiced"
-    - Pharyngealized
+      - "Breathy Voiced"
+      - Palatalised
+
+  - name: Breathy Palatalised Long
+    combines:
+      - "Breathy Voiced"
+      - Palatalised
+      - Long
+
+  - name: Breathy Velarised
+    combines:
+      - "Breathy Voiced"
+      - Velarised
+
+  - name: Breathy Velarised Long
+    combines:
+      - "Breathy Voiced"
+      - Velarised
+      - Long
+
+  - name: Breathy Pharyngealised
+    combines:
+      - "Breathy Voiced"
+      - Pharyngealised
+
+  - name: Breathy Pharyngealised Long
+    combines:
+      - "Breathy Voiced"
+      - Pharyngealised
+      - Long
 
   - name: Breathy Long
     combines:
-    - "Breathy Voiced"
-    - Long
+      - "Breathy Voiced"
+      - Long
 
 ## Creaky voice
 
-  - name: Creaky Labialized
+  - name: Creaky Labialised
     combines:
-    - Creaky Voiced
-    - Labialized
+      - "Creaky Voiced"
+      - Labialised
 
-  - name: Creaky Palatalized
+  - name: Creaky Palatalised
     combines:
-    - Creaky Voiced
-    - Palatalized
+      - "Creaky Voiced"
+      - Palatalised
 
-  - name: Creaky Velarized
+  - name: Creaky Velarised
     combines:
-    - Creaky Voiced
-    - Velarized
+      - "Creaky Voiced"
+      - Velarised
 
-  - name: Creaky Pharyngealized
+  - name: Creaky Pharyngealised
     combines:
-    - Creaky Voiced
-    - Pharyngealized
+      - "Creaky Voiced"
+      - Pharyngealised
 
   - name: Creaky Long
     combines:
-    - Creaky Voiced
-    - Long
+      - "Creaky Voiced"
+      - Long
+
+  - name: Creaky Labialised Long
+    combines:
+      - "Creaky Voiced"
+      - Labialised
+      - Long
+
+  - name: Creaky Palatalised Long
+    combines:
+      - "Creaky Voiced"
+      - Palatalised
+      - Long
+
+  - name: Creaky Velarised Long
+    combines:
+      - "Creaky Voiced"
+      - Velarised
+      - Long
+
+  - name: Creaky Pharyngealised Long
+    combines:
+      - "Creaky Voiced"
+      - Pharyngealised
+      - Long
 
 # Secondary articulations
 
 ## Linguolabial
 
-## Labialized
+## Labialised
 
-  - name: Labialized Aspirated
+  - name: Labialised Aspirated
     combines:
-    - Labialized
-    - Aspirated
+      - Labialised
+      - Aspirated
 
-  - name: Labialized Aspirated Long
+  - name: Labialised Aspirated Long
     combines:
-    - Labialized
-    - Aspirated
-    - Long
+      - Labialised
+      - Aspirated
+      - Long
 
-  - name: Labialized Ejective
+  - name: Labialised Ejective
     combines:
-    - Labialized
-    - Ejective
+      - Labialised
+      - Ejective
 
-  - name: Labialized Glottalized
+  - name: Labialised Glottalised
     combines:
-    - Labialized
-    - Glottalized
+      - Labialised
+      - Glottalised
 
-  - name: Labialized Velarized
+  - name: Labialised Glottalised Long
     combines:
-    - Labialized
-    - Velarized
+      - Labialised
+      - Glottalised
+      - Long
 
-  - name: Labialized Velarized Aspirated
+  - name: Labialised Velarised
     combines:
-    - Labialized
-    - Velarized
-    - Aspirated
+      - Labialised
+      - Velarised
 
-  - name: Labialized Pharyngealized
+  - name: Labialised Velarised Aspirated
     combines:
-    - Labialized
-    - Pharyngealized
+      - Labialised
+      - Velarised
+      - Aspirated
 
-  - name: Labialized Pharyngealized Ejective
+  - name: Labialised Velarised Long
     combines:
-    - Labialized
-    - Pharyngealized
-    - Ejective
+      - Labialised
+      - Velarised
+      - Long
 
-  - name: Labialized Pharyngealized Aspirated
+  - name: Labialised Velarised Aspirated Long
     combines:
-    - Labialized
-    - Pharyngealized
-    - Aspirated
+      - Labialised
+      - Velarised
+      - Aspirated
+      - Long
 
-  - name: Labialized Long
+  - name: Labialised Pharyngealised
     combines:
-    - Labialized
-    - Long
+      - Labialised
+      - Pharyngealised
 
-## Palatalized
-
-  - name: Palatalized Ejective
+  - name: Labialised Pharyngealised Long
     combines:
-    - Palatalized
-    - Ejective
+      - Labialised
+      - Pharyngealised
+      - Long
 
-  - name: Palatalized Labialized
+  - name: Labialised Pharyngealised Ejective
     combines:
-    - Palatalized
-    - Labialized
+      - Labialised
+      - Pharyngealised
+      - Ejective
 
-  - name: Palatalized Long
+  - name: Labialised Pharyngealised Aspirated
     combines:
-    - Palatalized
-    - Long
+      - Labialised
+      - Pharyngealised
+      - Aspirated
 
-  - name: Palatalized Aspirated
+  - name: Labialised Pharyngealised Ejective Long
     combines:
-    - Palatalized
-    - Aspirated
+      - Labialised
+      - Pharyngealised
+      - Ejective
+      - Long
 
-  - name: Palatalized Labialized Aspirated
+  - name: Labialised Pharyngealised Aspirated Long
     combines:
-    - Palatalized
-    - Labialized
-    - Aspirated
+      - Labialised
+      - Pharyngealised
+      - Aspirated
+      - Long
 
-# Pharyngealized
-
-  - name: Pharyngealized Ejective
+  - name: Labialised Long
     combines:
-    - Pharyngealized
-    - Ejective
+      - Labialised
+      - Long
 
-  - name: Pharyngealized Aspirated
-    combines:
-    - Pharyngealized
-    - Aspirated
+## Palatalised
 
-  - name: Pharyngealized Long
+  - name: Palatalised Ejective
     combines:
-    - Pharyngealized
-    - Long
+      - Palatalised
+      - Ejective
+
+  - name: Palatalised Labialised
+    combines:
+      - Palatalised
+      - Labialised
+
+  - name: Labialised Palatalised
+    combines:
+      - Labialised
+      - Palatalised
+
+  - name: Palatalised Long
+    combines:
+      - Palatalised
+      - Long
+
+  - name: Palatalised Aspirated
+    combines:
+      - Palatalised
+      - Aspirated
+
+
+  - name: Palatalised Aspirated Long
+    combines:
+      - Palatalised
+      - Aspirated
+      - Long
+
+  - name: Palatalised Labialised Aspirated
+    combines:
+      - Palatalised
+      - Labialised
+      - Aspirated
+
+  - name: Labialised Palatalised Aspirated
+    combines:
+      - Labialised
+      - Palatalised
+      - Aspirated
+
+  - name: Palatalised Labialised Aspirated Long
+    combines:
+      - Palatalised
+      - Labialised
+      - Aspirated
+      - Long
+
+  - name: Labialised Palatalised Aspirated Long
+    combines:
+      - Labialised
+      - Palatalised
+      - Aspirated
+      - Long
+
+# Pharyngealised
+
+  - name: Pharyngealised Ejective
+    combines:
+      - Pharyngealised
+      - Ejective
+
+  - name: Pharyngealised Aspirated
+    combines:
+      - Pharyngealised
+      - Aspirated
+
+  - name: Pharyngealised Long
+    combines:
+      - Pharyngealised
+      - Long
+
+  - name: Pharyngealised Aspirated Long
+    combines:
+      - Pharyngealised
+      - Aspirated
+      - Long
 
  # Tongue root state
 
 ## ATR
 
-  - name: ATR Velarized
+  - name: ATR Velarised
     combines:
-    - ATR
-    - Velarized
+      - ATR
+      - Velarised
 
   - name: ATR Long
     combines:
-    - ATR
-    - Long
+      - ATR
+      - Long
 
 ## RTR
 
-  - name: RTR Velarized
+  - name: RTR Velarised
     combines:
-    - RTR
-    - Velarized
+      - RTR
+      - Velarised
 
   - name: RTR Long
     combines:
-    - RTR
-    - Long
+      - RTR
+      - Long
 
 # Nasality
 
-  - name: Nasalized Creaky
+  - name: Nasalised Creaky
     combines:
-    - Nasalized
-    - Creaky Voiced
+      - "Creaky Voiced"
+      - Nasalised
 
-  - name: Nasalized Pharyngealized
+  - name: Nasalised Pharyngealised
     combines:
-    - Nasalized
-    - Pharyngealized
+      - Nasalised
+      - Pharyngealised
 
-  - name: Nasalized Long
+  - name: Nasalised Long
     combines:
-    - Nasalized
-    - Long
+      - Nasalised
+      - Long
+
+  - name: Nasalised Creaky Long
+    combines:
+      - "Creaky Voiced"
+      - Nasalised
+      - Long
+
+  - name: Nasalised Pharyngealised Long
+    combines:
+      - Nasalised
+      - Pharyngealised
+      - Long
+
+  - name: Prenasalised Creaky
+    combines:
+      - Prenasalised
+      - "Creaky Voiced"
+
+  - name: Prenasalised Pharyngealised
+    combines:
+      - Prenasalised
+      - Pharyngealised
+
+  - name: Prenasalised Long
+    combines:
+      - Prenasalised
+      - Long
+
+  - name: Prenasalised Creaky Long
+    combines:
+      - Prenasalised
+      - "Creaky Voiced"
+      - Long
+
+  - name: Prenasalised Pharyngealised Long
+    combines:
+      - Prenasalised
+      - Pharyngealised
+      - Long
+
+  - name: Prenasalised Creaky Palatal
+    combines:
+      - Prenasalised Palatal
+      - "Creaky Voiced"
+
+  - name: Prenasalised Pharyngealised Palatal
+    combines:
+      - Prenasalised Palatal
+      - Pharyngealised
+
+  - name: Prenasalised Long Palatal
+    combines:
+      - Prenasalised Palatal
+      - Long
+
+  - name: Prenasalised Creaky Palatal Long
+    combines:
+      - Prenasalised Palatal
+      - "Creaky Voiced"
+      - Long
+
+  - name: Prenasalised Pharyngealised Palatal Long
+    combines:
+      - Prenasalised Palatal
+      - Pharyngealised
+      - Long
+
+  - name: Prenasalised Creaky Dorsal
+    combines:
+      - Prenasalised Dorsal
+      - "Creaky Voiced"
+
+  - name: Prenasalised Pharyngealised Dorsal
+    combines:
+      - Prenasalised Dorsal
+      - Pharyngealised
+
+  - name: Prenasalised Long Dorsal
+    combines:
+      - Prenasalised Dorsal
+      - Long
+
+  - name: Prenasalised Creaky Dorsal Long
+    combines:
+      - Prenasalised Dorsal
+      - "Creaky Voiced"
+      - Long
+
+  - name: Prenasalised Pharyngealised Dorsal Long
+    combines:
+      - Prenasalised Dorsal
+      - Pharyngealised
+      - Long
+
+  - name: Prenasalised Creaky Labial
+    combines:
+      - Prenasalised Labial
+      - "Creaky Voiced"
+
+  - name: Prenasalised Pharyngealised Labial
+    combines:
+      - Prenasalised Labial
+      - Pharyngealised
+
+  - name: Prenasalised Long Labial
+    combines:
+      - Prenasalised Labial
+      - Long
+
+  - name: Prenasalised Creaky Labial Long
+    combines:
+      - Prenasalised Labial
+      - "Creaky Voiced"
+      - Long
+
+  - name: Prenasalised Pharyngealised Labial Long
+    combines:
+      - Prenasalised Labial
+      - Pharyngealised
+      - Long

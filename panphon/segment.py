@@ -18,6 +18,7 @@ class Segment(object):
                              interpreted as a feature specification
             weights (float): order list of feature weights/saliences
             """
+
         self.n2s = {-1: '-', 0: '0', 1: '+'}
         self.s2n = {k: v for (v, k) in self.n2s.items()}
         self.names = names
@@ -56,6 +57,13 @@ class Segment(object):
     def __iter__(self):
         """Return an iterator over the feature names"""
         return iter(self.names)
+
+    def __hash__(self):
+        """Return a hash of the feature dictionary"""
+        return hash(frozenset({(k, v) for k, v in self.data.items()}))
+
+    def __eq__(self, other):
+        return self.__hash__() == other.__hash__()
 
     def items(self):
         """Return a list of the features as (name, value) pairs"""

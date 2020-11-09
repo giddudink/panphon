@@ -18,23 +18,23 @@
   reverse: True
 - name: hi
   reverse: True
-- name: lo
+- name: low
   reverse: True
 - name: lab
   reverse: True
 - name: ant
   reverse: True
-- name: cor
+- name: dist
   reverse: True
-- name: distr
+- name: ba
   reverse: True
-- name: back
+- name: fro
   reverse: True
-- name: round
+- name: rou
   reverse: True
-- name: tense
+- name: ten
   reverse: True
-- name: long
+- name: lon
   reverse: True
 - name: voi
   reverse: True
