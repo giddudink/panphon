@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from __future__ import (absolute_import, division, print_function,
-                        unicode_literals)
+# from __future__ import (absolute_import, division, print_function,
+#                         unicode_literals)
+from functools import reduce
 
 import os.path
 import unicodedata
@@ -10,7 +11,7 @@ import numpy
 import pkg_resources
 
 import regex as re
-import unicodecsv as csv
+import csv
 
 from . import xsampa
 from .segment import Segment
@@ -34,7 +35,7 @@ class FeatureTable(object):
         fn = pkg_resources.resource_filename(__name__, fn)
         segments = []
         with open(fn, 'rb') as f:
-            reader = csv.reader(f, encoding='utf-8')
+            reader = csv.reader(f)
             header = next(reader)
             names = header[1:]
             for row in reader:
@@ -50,7 +51,7 @@ class FeatureTable(object):
     def _read_weights(self, weights_fn):
         weights_fn = pkg_resources.resource_filename(__name__, weights_fn)
         with open(weights_fn, 'rb') as f:
-            reader = csv.reader(f, encoding='utf-8')
+            reader = csv.reader(f)
             next(reader)
             weights = [float(x) for x in next(reader)]
         return weights

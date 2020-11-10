@@ -746,6 +746,44 @@ diacritics:
       tonfal: "+"
       tonconv: "-"
 
+  - marker: ↑
+    name: "Simple High Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+
+  - marker: ↓
+    name: "Simple Low Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+
+  - marker: ↗
+    name: "Simple Rising Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "+"
+      tonris: "+"
+
+  - marker: ↘
+    name: "Simple Falling Tone"
+    position: post
+    conditions:
+      - syl: "+"
+        voi: "+"
+    content:
+      tonhi: "-"
+      tonris: "-"
+
   - marker: ˈ
     name: "Primary Stress"
     position: post
@@ -1117,6 +1155,11 @@ combinations:
       - Long
       - "Mid Rising Tone"
 
+  - name: Long Simple Rising Tone
+    combines:
+      - Long
+      - "Simple Rising Tone"
+
   - name: Long Low Rising Tone
     combines:
       - Long
@@ -1136,6 +1179,11 @@ combinations:
     combines:
       - Long
       - "Mid Falling Tone"
+
+  - name: Long Simple Falling Tone
+    combines:
+      - Long
+      - "Simple Falling Tone"
 
   - name: Long Low Falling Tone
     combines:
@@ -1232,6 +1280,11 @@ combinations:
       - Nasalised
       - "Mid Rising Tone"
 
+  - name: Nasalised Simple Rising Tone
+    combines:
+      - Nasalised
+      - "Simple Rising Tone"
+
   - name: Nasalised Low Rising Tone
     combines:
       - Nasalised
@@ -1251,6 +1304,11 @@ combinations:
     combines:
       - Nasalised
       - "Mid Falling Tone"
+
+  - name: Nasalised Simple Falling Tone
+    combines:
+      - Nasalised
+      - "Simple Falling Tone"
 
   - name: Nasalised Low Falling Tone
     combines:
@@ -1347,6 +1405,11 @@ combinations:
       - "Creaky Voiced"
       - "Mid Rising Tone"
 
+  - name: Creaky Voiced Simple Rising Tone
+    combines:
+      - "Creaky Voiced"
+      - "Simple Rising Tone"
+
   - name: Creaky Voiced Low Rising Tone
     combines:
       - "Creaky Voiced"
@@ -1366,6 +1429,11 @@ combinations:
     combines:
       - "Creaky Voiced"
       - "Mid Falling Tone"
+
+  - name: Creaky Voiced Simple Falling Tone
+    combines:
+      - "Creaky Voiced"
+      - "Simple Falling Tone"
 
   - name: Creaky Voiced Low Falling Tone
     combines:
@@ -1462,6 +1530,11 @@ combinations:
       - "Breathy Voiced" 
       - "Mid Rising Tone"
 
+  - name: Breathy Voiced Simple Rising Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Simple Rising Tone"
+
   - name: Breathy Voiced Low Rising Tone
     combines:
       - "Breathy Voiced" 
@@ -1481,6 +1554,11 @@ combinations:
     combines:
       - "Breathy Voiced" 
       - "Mid Falling Tone"
+
+  - name: Breathy Voiced Simple Falling Tone
+    combines:
+      - "Breathy Voiced" 
+      - "Simple Falling Tone"
 
   - name: Breathy Voiced Low Falling Tone
     combines:
@@ -1577,6 +1655,11 @@ combinations:
       - Syllabic
       - "Mid Rising Tone"
 
+  - name: Syllabic Simple Rising Tone
+    combines:
+      - Syllabic
+      - "Simple Rising Tone"
+
   - name: Syllabic Low Rising Tone
     combines:
       - Syllabic
@@ -1596,6 +1679,11 @@ combinations:
     combines:
       - Syllabic
       - "Mid Falling Tone"
+
+  - name: Syllabic Simple Falling Tone
+    combines:
+      - Syllabic
+      - "Simple Falling Tone"
 
   - name: Syllabic Low Falling Tone
     combines:

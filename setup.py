@@ -25,7 +25,6 @@ setup(name='panphon',
       package_data={'panphon': ['data/*.csv', 'data/*.yml']},
       zip_safe=True,
       classifiers=['Operating System :: OS Independent',
-                   'Programming Language :: Python :: 2',
                    'Programming Language :: Python :: 3',
                    'Topic :: Software Development :: Libraries :: Python Modules',
                    'Topic :: Text Processing :: Linguistic']
