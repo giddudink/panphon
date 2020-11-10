@@ -7,7 +7,7 @@ import copy
 
 import yaml
 
-import unicodecsv as csv
+import csv
 
 
 class Segment(object):
@@ -105,7 +105,7 @@ class Combination(object):
 
 def read_ipa_bases(ipa_bases):
     segments = []
-    with open(ipa_bases, 'rb') as f:
+    with open(ipa_bases, 'r') as f:
         dictreader = csv.DictReader(f, encoding='utf=8')
         for record in dictreader:
             form = record['ipa']
@@ -142,10 +142,10 @@ def sort_all_segments(sort_order, all_segments):
 
 
 def write_ipa_all(ipa_bases, ipa_all, all_segments, sort_order):
-    with open(ipa_bases, 'rb') as f:
+    with open(ipa_bases, 'r') as f:
         reader = csv.reader(f, encoding='utf-8')
         fieldnames = next(reader)
-    with open(ipa_all, 'wb') as f:
+    with open(ipa_all, 'w') as f:
         writer = csv.DictWriter(f, encoding='utf-8', fieldnames=fieldnames)
         writer.writerow({k: k for k in fieldnames})
         all_segments_list = sort_all_segments(sort_order, all_segments)

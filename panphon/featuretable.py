@@ -34,7 +34,7 @@ class FeatureTable(object):
     def _read_bases(self, fn, weights):
         fn = pkg_resources.resource_filename(__name__, fn)
         segments = []
-        with open(fn, 'rb') as f:
+        with open(fn, 'r') as f:
             reader = csv.reader(f)
             header = next(reader)
             names = header[1:]
@@ -50,7 +50,7 @@ class FeatureTable(object):
 
     def _read_weights(self, weights_fn):
         weights_fn = pkg_resources.resource_filename(__name__, weights_fn)
-        with open(weights_fn, 'rb') as f:
+        with open(weights_fn, 'r') as f:
             reader = csv.reader(f)
             next(reader)
             weights = [float(x) for x in next(reader)]

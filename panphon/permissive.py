@@ -8,7 +8,7 @@ import pkg_resources
 import yaml
 
 import regex as re
-import unicodecsv as csv
+import csv
 
 from . import _panphon, xsampa
 
@@ -57,7 +57,7 @@ class PermissiveFeatureTable(_panphon.FeatureTable):
 
     def _read_ipa_bases(self, fn):
         fn = pkg_resources.resource_filename(__name__, fn)
-        with open(fn, 'rb') as f:
+        with open(fn, 'r') as f:
             reader = csv.reader(f, encoding='utf-8', delimiter=str(','))
             names = next(reader)[1:]
             bases = {}
@@ -92,7 +92,7 @@ class PermissiveFeatureTable(_panphon.FeatureTable):
     def _read_weights(self, filename=os.path.join('data', 'feature_weights.csv')):
         filename = pkg_resources.resource_filename(
             __name__, filename)
-        with open(filename, 'rb') as f:
+        with open(filename, 'r') as f:
             reader = csv.reader(f, encoding='utf-8')
             next(reader)
             weights = [float(x) for x in next(reader)]
