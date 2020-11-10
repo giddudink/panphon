@@ -132,7 +132,7 @@ class FeatureTable(object):
             __name__, filename)
         segments = []
         with open(filename, 'r') as f:
-            reader = csv.reader(f, encoding='utf-8')
+            reader = csv.reader(f)
             header = next(reader)
             names = header[1:]
             for row in reader:
@@ -147,7 +147,7 @@ class FeatureTable(object):
         filename = pkg_resources.resource_filename(
             __name__, filename)
         with open(filename, 'r') as f:
-            reader = csv.reader(f, encoding='utf-8')
+            reader = csv.reader(f)
             next(reader)
             weights = [float(x) for x in next(reader)]
         return weights
