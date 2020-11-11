@@ -155,7 +155,7 @@ def write_ipa_all(ipa_bases, ipa_all, all_segments, sort_order):
             writer.writerow(fields)
 
 
-def main(ipa_bases, ipa_all, dia_defs, sort_order):
+def main(ipa_bases = "ipa_bases.csv", ipa_all = "ipa_all.csv", dia_defs = "diacritic_definitions.yml", sort_order = "sort_order.yml"):
     segments = read_ipa_bases(ipa_bases)
     diacritics, combinations = parse_dia_defs(dia_defs)
     all_segments = set(segments)
@@ -174,9 +174,9 @@ def main(ipa_bases, ipa_all, dia_defs, sort_order):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('bases', help='File containing IPA bases (ipa_bases.csv)')
-    parser.add_argument('all', help='File to which all IPA segments is to be written (ipa_all.csv)')
-    parser.add_argument('-d', '--dia', required=True, help='Diacritic definition file (default=diacritic_definitions.yml)')
-    parser.add_argument('-s', '--sort-order', required=True, help='File definiting sort order.')
+    parser.add_argument('bases', default="ipa_bases.csv" ,help='File containing IPA bases (ipa_bases.csv)')
+    parser.add_argument('all', default="ipa_all.csv" ,help='File to which all IPA segments is to be written (ipa_all.csv)')
+    parser.add_argument('-d', '--dia', default="diacritic_definitions.yml", help='Diacritic definition file (default=diacritic_definitions.yml)')
+    parser.add_argument('-s', '--sort-order', default="sort_order.yml", help='File definiting sort order.')
     args = parser.parse_args()
     main(args.bases, args.all, args.dia, args.sort_order)

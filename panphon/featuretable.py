@@ -1,10 +1,5 @@
-# -*- coding: utf-8 -*-
-
-# from __future__ import (absolute_import, division, print_function,
-#                         unicode_literals)
 from functools import reduce
-
-import os.path
+from pathlib import Path
 import unicodedata
 
 import numpy
@@ -16,15 +11,9 @@ import csv
 from . import xsampa
 from .segment import Segment
 
-feature_sets = {
-    'spe+': (os.path.join('data', 'ipa_all.csv'),
-             os.path.join('data', 'feature_weights.csv'))
-}
-
-
 class FeatureTable(object):
-    def __init__(self, feature_set='spe+'):
-        bases_fn, weights_fn = feature_sets[feature_set]
+    def __init__(self, ipa_path = Path("data/ipa_all.csv"), feat_path = Path("data/feature_weights.csv")):
+        bases_fn, weights_fn = ipa_path, feat_path
         self.weights = self._read_weights(weights_fn)
         self.segments, self.seg_dict, self.names = self._read_bases(bases_fn, self.weights)
         self.seg_regex = self._build_seg_regex()
