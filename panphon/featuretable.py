@@ -3,7 +3,7 @@ from pathlib import Path
 import unicodedata
 
 import numpy
-import pkg_resources
+#import pkg_resources
 
 import regex as re
 import csv
