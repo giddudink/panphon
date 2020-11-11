@@ -22,7 +22,7 @@ class FeatureTable(object):
         self.xsampa = xsampa.XSampa()
 
     def _read_bases(self, fn, weights):
-        fn = pkg_resources.resource_filename(__name__, fn)
+        #fn = pkg_resources.resource_filename(__name__, fn)
         segments = []
         with open(fn, 'r') as f:
             reader = csv.reader(f)
@@ -39,7 +39,7 @@ class FeatureTable(object):
         return segments, seg_dict, names
 
     def _read_weights(self, weights_fn):
-        weights_fn = pkg_resources.resource_filename(__name__, weights_fn)
+        #weights_fn = pkg_resources.resource_filename(__name__, weights_fn)
         with open(weights_fn, 'r') as f:
             reader = csv.reader(f)
             next(reader)
