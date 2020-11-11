@@ -12,8 +12,8 @@ from . import xsampa
 from .segment import Segment
 
 class FeatureTable(object):
-    def __init__(self, ipa_path = Path("data/ipa_all.csv"), feat_path = Path("data/feature_weights.csv")):
-        bases_fn, weights_fn = ipa_path, feat_path
+    def __init__(self, ipa_path = Path("data/ipa_all.csv"), weights_path = Path("data/feature_weights.csv")):
+        bases_fn, weights_fn = str(ipa_path), str(weights_path)
         self.weights = self._read_weights(weights_fn)
         self.segments, self.seg_dict, self.names = self._read_bases(bases_fn, self.weights)
         self.seg_regex = self._build_seg_regex()
